@@ -20,6 +20,10 @@ module.exports = function (grunt) {
       less: {
         files: ['src/styles/**/*.less'],
         tasks: ['less:development']
+      },
+      html:{
+        files:['src/index.html'],
+        tasks:['replace:dev']
       }
     },
     replace: {
