@@ -21,6 +21,22 @@ module.exports = function (grunt) {
         files: ['src/styles/**/*.less'],
         tasks: ['less:development']
       }
+    },
+    replace:{
+      dev:{
+        options:{
+          patterns: [{
+            match: 'ENDERECO_DO_CSS',
+            replacement: './style/main.css'
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['src/index.html'],
+          dest: 'dev/'
+        }]
+      }
     }
   })
   grunt.loadNpmTasks('grunt-contrib-less')
